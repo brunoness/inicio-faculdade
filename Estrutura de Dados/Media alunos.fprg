@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="BRUNO"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2019-09-05 10:39:24 "/>
+        <attribute name="created" value="QlJVTk87U1VQT1JURTAxOzIwMTktMDktMDM7IjA1OjQzOjU0ICI7MjI0OQ=="/>
+        <attribute name="edited" value="QlJVTk87U1VQT1JURTAxOzIwMTktMDktMDU7IjEwOjM5OjI0ICI7MzsyMzU5"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="aluno" type="String" array="True" size="5"/>
+            <declare name="medias" type="Real" array="True" size="5"/>
+            <declare name="i, j" type="Integer" array="False" size=""/>
+            <declare name="nota, contnota" type="Real" array="False" size=""/>
+            <assign variable="nota" expression="0"/>
+            <assign variable="contnota" expression="0"/>
+            <for variable="i" start="0" end="4" direction="inc" step="1">
+                <output expression="&quot;Digite seu nome: &quot;" newline="True"/>
+                <input variable="aluno[i]"/>
+                <for variable="j" start="1" end="4" direction="inc" step="1">
+                    <output expression="&quot;Digite sua &quot;&amp; j &amp;&quot;&#170; nota: &quot;" newline="True"/>
+                    <input variable="contnota"/>
+                    <assign variable="nota" expression="contnota+nota"/>
+                </for>
+                <assign variable="medias[i]" expression="nota/4"/>
+                <assign variable="nota" expression="0"/>
+                <assign variable="contnota" expression="0"/>
+            </for>
+            <assign variable="i" expression="0"/>
+            <for variable="i" start="0" end="4" direction="inc" step="1">
+                <if expression="medias[i]&gt;=6">
+                    <then>
+                        <output expression="aluno[i] &amp;&quot;, foi aprovado com a m&#233;dia : &quot; &amp; medias[i]" newline="True"/>
+                    </then>
+                    <else>
+                        <output expression="aluno[i] &amp;&quot; Foi reprovado com a m&#233;dia de &quot; &amp; medias[i]" newline="True"/>
+                    </else>
+                </if>
+            </for>
+        </body>
+    </function>
+</flowgorithm>
